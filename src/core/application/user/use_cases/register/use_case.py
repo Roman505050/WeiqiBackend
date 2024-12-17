@@ -1,0 +1,88 @@
+from uuid import uuid4
+
+from loguru import logger
+
+from core.application.user.dto.user import UserDTO
+from core.application.user.ports.repositories.user_repo import (
+    IUserRepository,
+    IUserValidationRepository,
+)
+from core.application.user.ports.services.password_hasher import (
+    IPasswordHasher,
+)
+from core.application.user.use_cases.register.input_port import (
+    CreateUserDTO,
+    RegisterInputPort,
+)
+from core.application.user.use_cases.register.output_port import (
+    RegisterOutputPort,
+)
+from core.application.user.utils.weak_password_checker import (
+    WeakPasswordChecker,
+)
+from core.domain.user.entities.user import UserEntity
+
+
+class RegisterUseCase(RegisterInputPort):
+    def __init__(
+        self,
+        output_port: RegisterOutputPort,
+        user_repo: IUserRepository,
+        user_validation_repo: IUserValidationRepository,
+        cryptography_service: IPasswordHasher,
+    ) -> None:
+        self._output_port = output_port
+        self._user_repo = user_repo
+        self._user_validation_repo = user_validation_repo
+        self._cryptography_service = cryptography_service
+
+    async def execute(self, request: CreateUserDTO) -> None:
+        try:
+            conflicts = await self._check_conflicts(
+                request.username, request.email
+            )
+
+            if conflicts:
+                self._output_port.already_registered(
+                    conflicts["username"], conflicts["email"]
+                )
+                return
+
+            is_weak_password, errors = WeakPasswordChecker.check(
+                request.password.get_secret_value()
+            )
+            if not is_weak_password:
+                self._output_port.weak_password(errors)
+                return
+
+            password_hash = self._cryptography_service.hash_password(
+                request.password.get_secret_value()
+            )
+            user_id = uuid4()
+
+            user_entity = UserEntity(
+                user_id,
+                request.username,
+                request.email,
+                password_hash,
+            )
+
+            await self._user_repo.save(user_entity)
+
+            user_dto = UserDTO.from_entity(user_entity)
+            self._output_port.success(user_dto)
+
+        except Exception as e:
+            logger.error(f"An unexpected error occurred: {e}")
+            self._output_port.unexpected_error()
+
+    async def _check_conflicts(
+        self, username: str, email: str
+    ) -> dict[str, str | None]:
+        username_conflict, email_conflict = (
+            await self._user_validation_repo.check_conflicts(username, email)
+        )
+        return {
+            "username": username if username_conflict else None,
+            "email": email if email_conflict else None,
+        }
