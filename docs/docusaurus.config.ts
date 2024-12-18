@@ -19,6 +19,7 @@ const config: Config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'nesharp', // Usually your GitHub org/user name.
   projectName: 'weiqi', // Usually your repo name.
+  deploymentBranch: 'master',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
