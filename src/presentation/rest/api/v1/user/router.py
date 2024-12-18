@@ -2,10 +2,14 @@ from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 from loguru import logger
 
+from core.application.user.ports.renderers.email_verification_code import (
+    IEmailVerificationCodeRenderer,
+)
 from core.application.user.ports.repositories.user_repo import (
     IUserRepository,
     IUserValidationRepository,
 )
+from core.application.user.ports.services.email_service import IEmailService
 from core.application.user.ports.services.password_hasher import (
     IPasswordHasher,
 )
@@ -24,12 +28,19 @@ async def register(
     body: CreateUserDTO,
     user_repo: IUserRepository,
     user_validation_repo: IUserValidationRepository,
-    cryptography_service: IPasswordHasher,
+    password_hasher: IPasswordHasher,
+    email_renderer: IEmailVerificationCodeRenderer,
+    email_service: IEmailService,
 ):
     try:
         presenter = RegisterPresenter()
         use_case = RegisterUseCase(
-            presenter, user_repo, user_validation_repo, cryptography_service
+            output_port=presenter,
+            user_repo=user_repo,
+            user_validation_repo=user_validation_repo,
+            password_hasher=password_hasher,
+            email_renderer=email_renderer,
+            email_service=email_service,
         )
 
         await use_case.execute(body)
