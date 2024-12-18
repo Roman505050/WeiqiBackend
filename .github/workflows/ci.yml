@@ -8,6 +8,15 @@ on:
   release:
     types: [created, published]
 
+paths:
+  - 'src/**'
+  - 'tests/**'
+  - 'pyproject.toml'
+  - 'poetry.lock'
+  - '.github/workflows/ci.yml'
+  - '.flake8'
+  - 'isort.cfg'
+  - 'mypy.ini'
 
 jobs:
   run-tests:
