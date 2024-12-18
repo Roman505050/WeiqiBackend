@@ -3,19 +3,37 @@ name: CI Pipline
 on:
   push:
     branches: [ "master", "dev" ]
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'pyproject.toml'
+      - 'poetry.lock'
+      - '.github/workflows/ci.yml'
+      - '.flake8'
+      - 'isort.cfg'
+      - 'mypy.ini'
   pull_request:
     branches: [ "master", "dev" ]
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'pyproject.toml'
+      - 'poetry.lock'
+      - '.github/workflows/ci.yml'
+      - '.flake8'
+      - 'isort.cfg'
+      - 'mypy.ini'
   release:
     types: [created, published]
-  paths:
-    - 'src/**'
-    - 'tests/**'
-    - 'pyproject.toml'
-    - 'poetry.lock'
-    - '.github/workflows/ci.yml'
-    - '.flake8'
-    - 'isort.cfg'
-    - 'mypy.ini'
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'pyproject.toml'
+      - 'poetry.lock'
+      - '.github/workflows/ci.yml'
+      - '.flake8'
+      - 'isort.cfg'
+      - 'mypy.ini'
 
 jobs:
   run-tests:
