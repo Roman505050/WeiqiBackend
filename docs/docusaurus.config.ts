@@ -13,13 +13,12 @@ const config: Config = {
   url: 'https://duerx9ttvgdyw.cloudfront.net',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/WeiqiBackend',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'nesharp', // Usually your GitHub org/user name.
-  projectName: 'weiqi', // Usually your repo name.
-  deploymentBranch: 'master',
+  organizationName: 'Roman505050', // Usually your GitHub org/user name.
+  projectName: 'WeiqiBackend', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
