@@ -89,8 +89,9 @@ const config: Config = {
         { to: "/docs/api", label: "API", position: "left" },
         {
           href: 'https://github.com/Roman505050/WeiqiBackend',
-          label: 'GitHub',
-          position: 'right',
+          position: "right",
+          className: "header-github-link",
+          "aria-label": "GitHub repository",
         },
       ],
     },
