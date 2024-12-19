@@ -38,12 +38,29 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl:
-            'https://github.com/Roman505050/WeiqiBackend/tree/main/packages/docs/templates/shared/',
+            'https://github.com/Roman505050/WeiqiBackend/tree/master/packages/docs/',
         },
         theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
+    ],
+    [
+      "redocusaurus",
+      {
+        // Plugin Options for loading OpenAPI files
+        specs: [
+          {
+            spec: "docs/openapi.json",
+            route: "/docs/api/",
+          },
+        ],
+        // Theme Options for modifying how redoc renders them
+        theme: {
+          // Change with your site colors
+          primaryColor: "#E50914",
+        },
+      },
     ],
   ],
 
@@ -57,12 +74,19 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'tutorialSidebar',
+        //   position: 'left',
+        //   label: 'Tutorial',
+        // },
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'guidelinesSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Guidelines',
         },
+        { to: "/docs/api", label: "API", position: "left" },
         {
           href: 'https://github.com/Roman505050/WeiqiBackend',
           label: 'GitHub',
@@ -77,8 +101,8 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Guidelines',
+              to: '/docs/guidelines/intro',
             },
           ],
         },
@@ -113,7 +137,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Weiqi, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Weiqi Documentation Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
