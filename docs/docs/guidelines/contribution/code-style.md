@@ -7,7 +7,7 @@ sidebar_position: 4
 
 The project follows specific code style and formatting guidelines to ensure consistency and readability across the codebase. By adhering to these guidelines, you can maintain a high standard of code quality and make it easier for contributors to collaborate effectively. This document outlines the code style and formatting practices that should be followed when working on the project. 
 
-## Code Formatting with Black
+## **Code Formatting with Black**
 
 To maintain a consistent and clean code style across the project, we use **Black**, a powerful code formatter for Python. Adhering to this standard ensures that code remains readable and easy to maintain.
 
@@ -35,7 +35,7 @@ To maintain a consistent and clean code style across the project, we use **Black
 
 By following these guidelines, we can focus on writing quality code without worrying about formatting issues!
 
-## Linting Code with Flake8
+## **Linting Code with Flake8**
 
 In addition to code formatting, we use **Flake8** for linting to catch common style violations and potential issues in the code. Linting helps maintain code quality and consistency by identifying problems early in the development process.
 
@@ -62,7 +62,7 @@ In addition to code formatting, we use **Flake8** for linting to catch common st
 - **Consistent Style**: Enforce coding standards and maintain a uniform code style.
 - **Code Quality**: Improve the overall quality of the codebase by catching potential issues.
 
-## Static Code Analysis with mypy
+## **Static Code Analysis with mypy**
 
 In addition to linting, we use **mypy** for static type checking to ensure type safety and improve code quality. Static type checking helps catch type-related errors and provides better code documentation.
 
@@ -93,7 +93,7 @@ In addition to linting, we use **mypy** for static type checking to ensure type 
 - **Code Documentation**: Enhance code readability and maintainability with type annotations.
 - **Improved Reliability**: Reduce runtime errors by enforcing type safety.
 
-## Best Practices
+## **Best Practices**
 
 Here are some additional best practices to keep in mind when working on the project:
 
@@ -190,7 +190,7 @@ Ensure that all new code is covered by tests where applicable and that documenta
 
 By following these best practices, you can contribute to a well-structured, maintainable codebase that benefits all project contributors and users.
 
-## Pre-Submission Checklist
+## **Pre-Submission Checklist**
 
 Before submitting a Pull Request (PR), ensure that you have followed these guidelines:
 
@@ -212,11 +212,11 @@ Failure to adhere to these guidelines may result in delays in code review and me
 
 By following these guidelines and best practices, you can contribute to the project's codebase effectively and maintain a high standard of code quality. Thank you for your attention to detail and commitment to writing clean, readable code!
 
-## Conclusion
+## **Conclusion**
 
 Consistent code style and formatting are essential for maintaining a high-quality codebase and enabling effective collaboration among contributors. By following the guidelines outlined in this document, you can ensure that the project's code remains clean, readable, and easy to maintain. Adhering to code formatting standards, linting practices, and static analysis tools helps improve code quality, identify potential issues early, and streamline the development process. Thank you for your dedication to writing clean, well-formatted code that benefits the entire project and its contributors.
 
-## Additional Resources
+## **Additional Resources**
 
 - [Black Documentation](https://black.readthedocs.io/en/stable/)
 - [Flake8 Documentation](https://flake8.pycqa.org/en/latest/)

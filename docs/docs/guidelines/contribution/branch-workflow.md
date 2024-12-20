@@ -7,7 +7,7 @@ sidebar_position: 1
 
 The branch workflow defines the process for creating, managing, and merging branches in a Git repository. By following a structured workflow, you can ensure that changes are made in a consistent and organized manner, facilitating collaboration and code review processes. This document outlines the branch workflow that should be followed when working on the project.
 
-## Branch Types
+## **Branch Types**
 
 Branches play a crucial role in managing the development workflow of a project. By using different types of branches, you can separate different types of changes and features, making it easier to track progress and collaborate effectively with other contributors. The following are common branch types used in the project:
 
@@ -22,7 +22,7 @@ Branches play a crucial role in managing the development workflow of a project. 
 
 These branch types help categorize changes based on their purpose and scope, making it easier to manage and review the changes effectively. When creating a new branch, ensure that the branch name reflects the type of changes being made.
 
-## Branch Naming Guidelines
+## **Branch Naming Guidelines**
 
 When naming branches, consider the following guidelines to ensure consistency and clarity across the repository:
 
@@ -35,7 +35,7 @@ When naming branches, consider the following guidelines to ensure consistency an
 
 By adhering to these guidelines, you can create a structured and organized naming scheme for branches, making it easier to identify the purpose and scope of each branch. Consistent branch naming also helps streamline the code review and merging processes, ensuring that changes are integrated smoothly into the codebase.
 
-## Parent Branch for Derivative Branches
+## **Parent Branch for Derivative Branches**
 
 When creating a new branch, it is essential to choose the correct parent branch based on the type of changes being made. Below are the common parent branches used in the project and their purposes:
 
@@ -77,7 +77,7 @@ When creating a new branch, it is essential to choose the correct parent branch 
 - **Purpose**: For improving existing features or adding minor functionalities.
 - **Merge Strategy**: Merge back to `dev` after completion.
 
-## Branch Workflow
+## **Branch Workflow**
 
 The branch workflow outlines the steps involved in creating, managing, and merging branches in the repository. The following steps should be followed when working with branches:
 
@@ -101,7 +101,7 @@ The branch workflow outlines the steps involved in creating, managing, and mergi
 
 By following this branch workflow, you can ensure that changes are made in a structured and organized manner, maintaining the quality and stability of the codebase. Effective branch management is essential for collaboration and project success, enabling contributors to work together seamlessly and efficiently.
 
-## Conclusion
+## **Conclusion**
 
 The branch workflow is a critical aspect of managing the development process in a Git repository. By following the guidelines and best practices outlined in this document, you can create, manage, and merge branches effectively, ensuring that changes are made in a consistent and organized manner. Adopting a structured branch workflow helps streamline the development process, enhance collaboration among team members, and maintain the quality and stability of the codebase.
 

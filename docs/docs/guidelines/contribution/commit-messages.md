@@ -73,10 +73,10 @@ Closes #<issue_number> (if applicable)
 
 By using a commit message template, you can streamline the process of creating consistent and informative commit messages, improving the overall clarity and readability of the commit history.
 
-## Conclusion
+## **Conclusion**
 
 Commit messages are a critical aspect of maintaining a clean and organized codebase. By following the guidelines outlined in this document, you can create clear, descriptive, and consistent commit messages that enhance the quality and maintainability of the project. Adopting best practices for commits and commit messages will help you track changes effectively, collaborate with other contributors, and manage the project efficiently.
 
-## Additional Resources
+## **Additional Resources**
 
 - [Git Commit Guidelines](https://www.conventionalcommits.org/)

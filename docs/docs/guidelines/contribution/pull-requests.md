@@ -53,6 +53,6 @@ Pull Requests (PRs) are a critical part of the development process in most Git r
 - The author should not merge their own PR. Another team member must perform the merge after review and approval.
 - All checks must pass before the PR can be merged into the target branch.
 
-## Conclusion
+## **Conclusion**
 
 Pull Requests play a crucial role in the collaborative development process, enabling contributors to propose changes, review modifications, and maintain the quality and stability of the codebase. By following the guidelines and best practices outlined in this document, you can create, manage, and merge PRs effectively, ensuring that the codebase remains clean, organized, and free from errors. Effective PR management is essential for collaboration and project success, allowing contributors to work together seamlessly and efficiently.
