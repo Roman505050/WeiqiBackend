@@ -12,7 +12,7 @@
                 "operationId": "root__get",
                 "responses": {
                     "200": {
-                        "description": "Successful Response",
+                        "description": "Hello World?",
                         "content": {
                             "application/json": {
                                 "schema": {}
