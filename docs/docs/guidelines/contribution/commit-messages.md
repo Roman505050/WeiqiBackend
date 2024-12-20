@@ -9,7 +9,7 @@ Commits are an essential part of the development workflow in a Git repository. T
 
 This document outlines the guidelines for creating commits and writing commit messages that adhere to established standards and best practices. By following these guidelines, you can ensure that your commits are clear, descriptive, and consistent, enhancing the overall quality and maintainability of the codebase.
 
-## 1. **Commit Guidelines**
+## **Commit Guidelines**
 
 ### General Guidelines
 
@@ -36,7 +36,7 @@ Use appropriate prefixes to categorize the changes:
 - The message should be **short and to the point**, avoiding unnecessary details.
 - The prefix should be followed by a colon and a brief description of the change.
 
-## 2. **Commit Message Examples**
+## **Commit Message Examples**
 
 Here are some examples of commit messages following the guidelines:
 
@@ -51,7 +51,7 @@ Here are some examples of commit messages following the guidelines:
 
 By using descriptive commit messages with appropriate prefixes, you can clearly communicate the purpose of each commit and provide valuable context for reviewers and other contributors.
 
-## 3. **Commit Message Template**
+## **Commit Message Template**
 
 To ensure consistency and adherence to the commit message guidelines, you can use a commit message template. The template provides a structured format for writing commit messages, making it easier to follow the established conventions and best practices.
 

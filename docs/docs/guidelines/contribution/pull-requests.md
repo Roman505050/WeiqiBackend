@@ -7,7 +7,7 @@ sidebar_position: 3
 
 Pull Requests (PRs) are a critical part of the development process in most Git repositories. They allow contributors to propose changes, discuss modifications, and collaborate on improving the codebase. This document outlines the guidelines and best practices for creating and managing Pull Requests in this repository.
 
-## 1. **Creating a Pull Request**
+## **Creating a Pull Request**
 
 ### Steps to Create a PR
 
@@ -27,7 +27,7 @@ Pull Requests (PRs) are a critical part of the development process in most Git r
 
 - **PR Description**: Provide a clear overview of the changes, their purpose, and any relevant context that reviewers need to know.
 
-## 2. **Review and Approval Process**
+## **Review and Approval Process**
 
 ### Code Review
 
@@ -45,7 +45,7 @@ Pull Requests (PRs) are a critical part of the development process in most Git r
 - If a PR fails any CI/CD check, the author must resolve the issues before the PR can be merged.
 - GitHub Actions will automatically run tests and checks to verify that the changes meet the repository's quality standards.
 
-## 3. **Merging a Pull Request**
+## **Merging a Pull Request**
 
 ### Approval and Merge
 
