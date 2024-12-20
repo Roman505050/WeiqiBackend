@@ -33,6 +33,7 @@ jobs:
       
       - name: Update OpenAPI docs
         run: |
+          export PYTHONPATH=src
           poetry run python docs/scripts/update_openapi.py
 
       - name: Setup Git configuration
