@@ -1,6 +1,6 @@
 ---
 title: Master Branch Protection
-sidebar_position: 1
+sidebar_position: 0
 ---
 
 # Master Branch Protection
