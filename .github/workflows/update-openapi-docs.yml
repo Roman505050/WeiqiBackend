@@ -72,10 +72,3 @@ jobs:
           base: master
           labels: "automated"
           reviewers: "Roman505050"
-
-      - name: Verify pull request creation
-        if: ${{ steps.push-changes.outcome == 'success' }}
-        run: |
-          echo "Created PR to ${{ env.branch_name }} with base master"
-
-
