@@ -1,0 +1,73 @@
+name: Update OpenAPI docs
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "src/**"
+  workflow_dispatch:
+
+jobs:
+  update-openapi-docs:
+    name: Update OpenAPI docs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v2
+        with:
+            python-version: 3.12
+      
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Install dependencies
+        run: |
+          poetry install --only main
+      
+      - name: Update OpenAPI docs
+        run: |
+          poetry run python docs/scripts/update_openapi.py
+
+      - name: Setup Git configuration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Check for changes
+        run: |
+          git diff --quiet || echo "changes_detected=true" >> $GITHUB_ENV
+
+      - name: Commit changes
+        id: commit-changes
+        if: ${{ env.changes_detected == 'true' }}
+        run: |
+          git add docs/docs/openapi.json
+          git commit -m "Update OpenAPI docs"
+
+      - name: Push changes to a new branch
+        id: push-changes
+        if: ${{ steps.commit-changes.outcome == 'success' }}
+        run: |
+          branch_name="update-openapi-docs-$(date +'%Y%m%d%H%M%S')"
+          echo "branch_name=$branch_name" >> $GITHUB_ENV
+          git push origin HEAD:$branch_name
+
+      - name: Create a pull request
+        if: ${{ steps.push-changes.outcome == 'success' }}
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Update OpenAPI docs"
+          title: "Update OpenAPI documentation"
+          body: "This pull request updates the OpenAPI documentation to reflect the latest changes."
+          branch: ${{ env.branch_name }}
+          base: master
+          labels: "automated"
+    
