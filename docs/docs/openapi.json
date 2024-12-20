@@ -6,6 +6,22 @@
         "version": "0.1.0"
     },
     "paths": {
+        "/": {
+            "get": {
+                "summary": "Root",
+                "operationId": "root__get",
+                "responses": {
+                    "200": {
+                        "description": "Hello World?",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/hello/{name}": {
             "get": {
                 "summary": "Say Hello",
