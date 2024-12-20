@@ -6,3 +6,9 @@
 # Weiqi Backend
 
 Weiqi Backend is a FastAPI application that provides a RESTful API for the Weiqi game. It is a simple implementation of the game that allows users to create games, make moves, and get the current state of the game.
+
+## Project resources
+
+- [Production Website](https://duerx9ttvgdyw.cloudfront.net)
+- [Documentation](/weiqi-backend)
+- [API Reference](/weiqi-backend/docs/api)
