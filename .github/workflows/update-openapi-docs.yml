@@ -71,5 +71,4 @@ jobs:
           branch: ${{ env.branch_name }}
           base: master
           labels: "automated"
-          sign-commits: true
           reviewers: "Roman505050"
