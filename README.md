@@ -10,5 +10,5 @@ Weiqi Backend is a FastAPI application that provides a RESTful API for the Weiqi
 ## Project resources
 
 - [Production Website](https://duerx9ttvgdyw.cloudfront.net)
-- [Documentation](/weiqi-backend)
-- [API Reference](/weiqi-backend/docs/api)
+- [Documentation](https://roman505050.github.io/weiqi-backend)
+- [API Reference](https://roman505050.github.io/weiqi-backend/docs/api)
