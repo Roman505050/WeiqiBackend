@@ -30,7 +30,7 @@ def custom_openapi():
 app.openapi = custom_openapi  # type: ignore
 
 
-@app.get("/")
+@app.get("/", responses={200: {"description": "Hello World?"}})
 async def root():
     return {"message": "Hello World"}
 
